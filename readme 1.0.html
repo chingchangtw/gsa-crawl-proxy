@@ -1,0 +1,72 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=windows-1252"></meta>
+    <title>readme</title>
+  </head>
+  <body>
+     <h1>Google Search Appliance (GSA) Crawl Proxy</h1>
+     <p>
+      <font size="5">
+       Readme</font><br>
+    </p>
+     <p>
+      Google Search Appliance is able to natively crawl&nbsp;secure content coming from multiple sources using for instance the following main methods:
+    </p>
+    <ul>
+      <li>
+      <b>HTTP Basic/NTLM authentication</b>: if your backend content systems
+      either support HTTP Basic or NTLM (Windows native authentication), you can
+      create crawling rules to let the appliance access securely the documents.
+      </li>
+      <li>
+      <b>Cookie sites</b>: if the access to your content servers is protected by
+      cookie, you can define cookie rules that authenticate the crawler against
+      some URL patterns. If any URL matches with any of these rules, the
+      appliance will send cookies back to the server where documents are. 
+      </li>
+      <li>
+      <b>Forms based authentication</b>: if you have a Single Sign-On system like CA
+      Siteminder (aka Netegrity) or Oracle Access Manager (aka Oblix) protecting
+      applications, a Forms Based crawling rule can be used. The appliance will
+      recover the content if the right credentials are provided exactly the same
+      way as a user is accessing those SSO protected applications. As these
+      systems are driven by a cookie, the appliance can manage that SSO
+      authentication cookie to know if the user is already authenticated or not.
+      As of today the appliance only supports one Forms Based authentication
+      crawling rule.
+      </li>
+    </ul>
+    <br>
+    <p>
+      The&nbsp;above&nbsp;offering is useful in most cases but in some others we would need to use an extended functionality. This is usually occurring when we have some content sources that are not able to manage any of the above security mechanisms or we have more than one Forms based authentication solution, not being protected by a central SSO server. 
+    </p><p><b>GSA&nbsp;Crawl&nbsp;Proxy</b>,&nbsp;this open source project, is meant to extend the crawling possibilities taking the advantage of the connectivity provided by the AuthN/AuthZ modules for the 
+      <a href="http://code.google.com/p/gsa-valve-security-framework/">
+        GSA Valve Security Framework
+      </a>. These modules implement the integration complexity to securely access to&nbsp;the content sources where documents are. The GSA Crawl Proxy is able to authenticate the crawler user coming from the search appliance using HTTP Basic, and send those&nbsp;credentials to any of these modules that can convert them to any security mechanism the content servers would understand.
+    </p><p>
+      The integration between the GSA and this crawling tool is done configuring a proxy access in the appliance. This application is acting as a proxy that gets the crawling requests from the appliance and returns back the result, either the document's content if the request was successful or an HTTP error code if does not.
+    </p><p>
+      &nbsp;
+    </p><h3>
+      Latest Changes
+    </h3>
+    <p>
+      <strong>Release 1.0&nbsp;-&nbsp;June 18 2008</strong> </p>
+    <ul>
+      <li>
+        Initial version
+      </li>
+    </ul>
+    <br>
+	<h3>
+      More Information
+    </h3>
+    <p>
+      Checks the documentation available at the open source project site at code.google.com to get more information and the instructions on how to deploy this application.
+    </p>
+    <p>
+      &nbsp;
+    </p>
+</body>
+</html>
