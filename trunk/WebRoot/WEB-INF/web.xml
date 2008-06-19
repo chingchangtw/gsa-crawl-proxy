@@ -1,0 +1,35 @@
+<?xml version = '1.0' encoding = 'windows-1252'?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd" version="2.4" xmlns="http://java.sun.com/xml/ns/j2ee">
+    <description>Empty web.xml file for Web Application</description>
+    <filter>
+        <filter-name>crawler</filter-name>
+        <filter-class>com.google.gsa.proxy.Crawler</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>crawler</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+    <mime-mapping>
+        <extension>html</extension>
+        <mime-type>text/html</mime-type>
+    </mime-mapping>
+    <mime-mapping>
+        <extension>txt</extension>
+        <mime-type>text/plain</mime-type>
+    </mime-mapping>
+    <jsp-config/>
+    <!-- Crawl Proxy Config Location -->
+    <env-entry>
+        <description>Crawl Proxy Config Path</description>
+        <env-entry-name>crawlerConfigPath</env-entry-name>
+        <env-entry-type>java.lang.String</env-entry-type>     
+        <env-entry-value>C:\Program Files\Tomcat 5.5\common\classes\crawlConfig.xml</env-entry-value>        
+    </env-entry>
+    <!-- Valve Config Location -->
+    <env-entry>
+        <description>GSA Valve Config Path</description>
+        <env-entry-name>gsaValveConfigPath</env-entry-name>
+        <env-entry-type>java.lang.String</env-entry-type>     
+        <env-entry-value>C:\Program Files\Tomcat 5.5\common\classes\gsaValveConfig.xml</env-entry-value>        
+    </env-entry>    
+</web-app>

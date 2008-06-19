@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<proxy_configuration>        
+    <crawler>
+        <credentialID>root</credentialID>
+        <realm>enterprise.lon.corp.google.com</realm>
+    </crawler>
+    <gsa>
+        <ipAddress>192.168.1.2\, 192.168.1.4\, 192.168.1.8-192.168.1.12</ipAddress>
+    </gsa>
+    <session>
+        <maxSessionAge>360</maxSessionAge>        
+    </session>    
+</proxy_configuration>
