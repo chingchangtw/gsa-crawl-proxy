@@ -18,12 +18,12 @@
         <mime-type>text/plain</mime-type>
     </mime-mapping>
     <jsp-config/>
-    <!-- Crawl Proxy Config Location -->
+    <!-- Crawler Config Location -->
     <env-entry>
-        <description>Crawl Proxy Config Path</description>
+        <description>Crawler Config Path</description>
         <env-entry-name>crawlerConfigPath</env-entry-name>
         <env-entry-type>java.lang.String</env-entry-type>     
-        <env-entry-value>C:\Program Files\Tomcat 5.5\common\classes\crawlConfig.xml</env-entry-value>        
+        <env-entry-value>C:\Program Files\Tomcat 5.5\common\classes\crawlerConfig.xml</env-entry-value>        
     </env-entry>
     <!-- Valve Config Location -->
     <env-entry>
