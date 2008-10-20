@@ -360,6 +360,10 @@ public class Crawler implements Filter {
                 logger.error("Session is not longer valid: " + e.getMessage(), 
                              e);
                 resultCode = HttpServletResponse.SC_UNAUTHORIZED;
+            } catch (Exception e) {
+                logger.error("Exception when authorizing: " + e.getMessage(), 
+                             e);
+                resultCode = HttpServletResponse.SC_UNAUTHORIZED;
             }
         } else {
             logger.error("Authorization class is NULL");
@@ -522,6 +526,12 @@ public class Crawler implements Filter {
      */
     public static String getUrl(HttpServletRequest request) {
         String reqUrl = request.getRequestURL().toString();
+        
+        //Support for HTTP 1.1 
+        if (request.getHeader("X-Forwarded-Host") != null){ 
+            reqUrl = reqUrl.replace(request.getHeader("Host"),request.getHeader("X-Forwarded-Host"));
+        }
+        
         String queryString = request.getQueryString();
         if (queryString != null) {
             reqUrl += "?" + queryString;
